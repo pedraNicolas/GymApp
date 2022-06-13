@@ -16,6 +16,12 @@ public class NewUserViewModel extends ViewModel {
                        int token,
                        int cellphone){
     dataBaseUseCase.setUser(id,name,user,password,token,cellphone);
+    dataBaseUseCase.createUserUC(user,password);
+    }
+
+    public void loginVM (String user,
+                            String password){
+         dataBaseUseCase.loginUC(user,password);
     }
 
 //    public void userList(){

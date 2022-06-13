@@ -1,5 +1,7 @@
 package com.alkemy.myapplication.domain;
 
+import android.view.View;
+
 import com.alkemy.myapplication.core.DataBaseConection;
 import com.alkemy.myapplication.data.models.User;
 import com.alkemy.myapplication.data.models.repo.UserRepository;
@@ -19,19 +21,13 @@ public class DataBaseUseCase implements DataBaseConection {
         userRepository.setUserData(id,name,user,password,token,cellphone);
 
     }
+    public void createUserUC(String user,
+                             String password){
+        userRepository.createUser(user,password);
+    }
 
-//    static void saveUser(String document, Map<String, Object> userDates){
-//        db.collection("users").document(document).set(userDates);
-//    }
-//    static void getUser(String document){
-//        db.collection("users").get().addOnSuccessListener(new OnSuccessListener(){
-//
-//
-//
-//            @Override
-//            public void onSuccess(DocumentSnapshot documentSnapshot) {
-//                Map<String, Object> user = documentSnapshot.getData();
-//            }
-//        });
-//    }
+    public void loginUC(String user,
+                        String password){
+         userRepository.login(user,password);
+    }
 }
