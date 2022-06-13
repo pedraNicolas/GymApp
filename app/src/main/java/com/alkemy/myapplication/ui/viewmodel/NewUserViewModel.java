@@ -9,19 +9,20 @@ import com.alkemy.myapplication.domain.DataBaseUseCase;
 public class NewUserViewModel extends ViewModel {
 
     DataBaseUseCase dataBaseUseCase = new DataBaseUseCase();
-    public void createUser( String id,
-                       String name,
-                       String user,
-                       String password,
-                       int token,
-                       int cellphone){
-    dataBaseUseCase.setUser(id,name,user,password,token,cellphone);
-    dataBaseUseCase.createUserUC(user,password);
+
+    public void createUser(String id,
+                           String name,
+                           String user,
+                           String password,
+                           int token,
+                           int cellphone) {
+        dataBaseUseCase.setUser(id, name, user, password, token, cellphone);
+        dataBaseUseCase.createUserUC(user, password);
     }
 
-    public void loginVM (String user,
-                            String password){
-         dataBaseUseCase.loginUC(user,password);
+    public void loginVM(String user,
+                        String password) {
+        dataBaseUseCase.loginUC(user, password);
     }
 
 //    public void userList(){
@@ -30,8 +31,7 @@ public class NewUserViewModel extends ViewModel {
 
 
     public NewUserViewModel() {
-        Log.i("NewUserViewModel","ViewModel is Created");
-
+        Log.i("NewUserViewModel", "ViewModel is Created");
 
 
     }

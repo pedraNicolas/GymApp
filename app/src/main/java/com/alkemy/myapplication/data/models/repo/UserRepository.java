@@ -48,7 +48,7 @@ public class UserRepository extends AppCompatActivity implements DataBaseConecti
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
-                    Log.d("User", "Usuario creado");
+                    Log.d("SingIn", "Usuario dado de alta");
                 }
             }
         });
@@ -69,6 +69,7 @@ public class UserRepository extends AppCompatActivity implements DataBaseConecti
         userHashMap.put("token", token);
         db.collection("users").document(user).set(userHashMap);
         System.out.println(userHashMap);
+        Log.d("SingInUser", "Usuario creado");
     }
 
 
