@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 public void showHome(){
-    Intent intent = new Intent(this,NewUser.class);
+    Intent intent = new Intent(this,HomeActivity.class);
     startActivity(intent);
 }
 }

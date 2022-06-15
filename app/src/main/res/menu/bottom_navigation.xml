@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/firstFragment"
+        android:icon="@drawable/ic_home_fill0_wght400_grad0_opsz48"
+        android:title="Primero" />
+    <item
+        android:id="@+id/secondFragment"
+        android:icon="@drawable/ic_calendar_month_fill0_wght400_grad0_opsz48"
+        android:title="Segundo" />
+    <item
+        android:id="@+id/thirdFragment"
+        android:icon="@drawable/ic_person_fill0_wght400_grad0_opsz48"
+        android:title="Tercero" />
+</menu>
