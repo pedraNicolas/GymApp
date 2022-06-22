@@ -4,18 +4,15 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
-
-import com.alkemy.myapplication.data.network.services.encrypter.EncrypterServiceImplement;
 import com.alkemy.myapplication.databinding.ActivityUserResponseBinding;
 import com.alkemy.myapplication.ui.viewmodel.NewUserViewModel;
 
 public class NewUser extends AppCompatActivity {
     private ActivityUserResponseBinding binding;
     private NewUserViewModel userViewModel = new NewUserViewModel();
-    EncrypterServiceImplement encrypterServiceImplement = new EncrypterServiceImplement();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -1,9 +1,11 @@
 package com.alkemy.myapplication.ui.view.fragments;
 
+import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
@@ -16,10 +18,14 @@ import com.alkemy.myapplication.data.models.User;
 import com.alkemy.myapplication.databinding.FragmentHomeBinding;
 import com.alkemy.myapplication.ui.viewmodel.HomeFragmentViewModel;
 
-public class HomeFragment extends Fragment  {
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
+
+public class HomeFragment extends Fragment {
     private FragmentHomeBinding binding;
-    public View.OnClickListener listener;
     HomeFragmentViewModel homeFragmentViewModel;
+    LocalDateTime todaysDate = LocalDateTime.now();
 //    public HomeFragment() {
 //    }
 
@@ -35,10 +41,11 @@ public class HomeFragment extends Fragment  {
         homeFragmentViewModel = new ViewModelProvider(requireActivity()).get(HomeFragmentViewModel.class);
         User user = homeFragmentViewModel.getSelectedItem().getValue();
         Log.d("fragment", user.getName());
+        binding.editTextDate.setText(todaysDate.toString());
+        binding.helloTextView.setText("Hola " + user.getName());
+        binding.remainsTokenTextView.setText("Tokens disponibles: " + user.getToken().toString());
 
-        binding.helloTextView.setText("Hola "+ user.getName());
-
-        binding.button2.setOnClickListener(new View.OnClickListener() {
+        binding.electrofitnessBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 homeFragmentViewModel.getActivitiesReserveVM("electrofitness");
@@ -48,13 +55,6 @@ public class HomeFragment extends Fragment  {
         //binding.helloTextView.setText(name);
 
 
-
-
-
         return binding.getRoot();
-
     }
-
-
-
 }

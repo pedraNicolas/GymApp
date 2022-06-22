@@ -83,21 +83,6 @@ public class UserRepository extends AppCompatActivity implements DataBaseConecti
 
     }
 
-    public void getUser(String user) {
-
-//        db.collection("users").document(user).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-//            @Override
-//            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-//                DocumentSnapshot document = task.getResult();
-//                usuario = document.toObject(User.class);
-//                Log.d("Auth", usuario.getName());
-//            }
-//        });
-//        return usuario;
-//
-//    }
-
-    }
 }
 
 
