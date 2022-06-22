@@ -14,9 +14,9 @@ public class NewUserViewModel extends ViewModel {
                            String name,
                            String user,
                            String password,
-                           int token,
-                           int cellphone) {
-        dataBaseUseCase.setUser(id, name, user, password, token, cellphone);
+                           Long token,
+                           Long cellphone) {
+        dataBaseUseCase.setUser(id, name, user, token, cellphone);
         dataBaseUseCase.createUserUC(user, password);
     }
 

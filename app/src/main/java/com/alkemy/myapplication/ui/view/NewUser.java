@@ -44,8 +44,7 @@ public class NewUser extends AppCompatActivity {
                 if (!name.isEmpty() || !user.isEmpty()) {
                     String id = binding.idTextView.getText().toString();
                     String passwordPut = binding.passwordTextView.getText().toString();
-                    String hashPass = encrypterServiceImplement.encryptPassword(passwordPut);
-                    userViewModel.createUser(id, name, user, hashPass, 0, 0);
+                    userViewModel.createUser(id, name, user, passwordPut, 0L, 0L);
                 }else{
                     Toast.makeText(getApplicationContext(),"User and Password is requerid",Toast.LENGTH_SHORT).show();
                 }
