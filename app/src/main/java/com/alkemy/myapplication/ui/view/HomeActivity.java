@@ -6,11 +6,14 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.alkemy.myapplication.R;
 import com.alkemy.myapplication.data.models.User;
@@ -23,6 +26,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class HomeActivity extends AppCompatActivity {
     //Variables
+    View view;
     private ActivityHomeBinding binding;
     private HomeFragmentViewModel homeFragmentViewModel;
     HomeFragment homeFragment = new HomeFragment();
@@ -30,7 +34,8 @@ public class HomeActivity extends AppCompatActivity {
     ProfileFragment profileFragment = new ProfileFragment();
     Intent intentMainActivity = getIntent();
 
-
+    public HomeActivity() {
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,6 +82,7 @@ public class HomeActivity extends AppCompatActivity {
         transaction.replace(R.id.container, fragment);
         transaction.commit();
     }
+
 
 
 }
